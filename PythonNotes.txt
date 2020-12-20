@@ -1,0 +1,1832 @@
+z     19/10/2020
+Guido Van Rossam develop Python 1991.
+Features of Python
+1)It is very simple and easy to learn
+2)It is freeware and open source
+3)High level language
+4)Platform independent
+5)It is portable
+6)Dynamically typed language.
+7)Interpreted
+8)It is both POP and OOP
+9)Extensible
+10)Embedded 
+11)Extensive library are available.
+
+
+#Complex data type:-It use values in complex type format
+# a+bj
+#a :=real part
+#b:= is imaginary part(only in decimal)
+a=20+5j 
+b=30+6j
+print(a+b)
+
+c=45.2+6.6j
+d=36+7j
+print(c+d)
+print(type(c))
+
+#in python +ve index as well as -ve index is also use
+#+ve index is from left to right. starting index is 0
+#-ve index is from right to left. starting index is -1
+s='Mugdha'
+print(s)
+print(s[-5])
+
+#slice(:)operator:-It is used to find substring between specified index
+s1='Hello students I am Mugdha, Your trainer for python'
+s2=s1[15:26]
+print(s2)
+
+#range: It is use to specify sequence of values. It is immutable.
+#range([start],end,[step])
+#start=:-starting value for range
+#end:-ending value of required range e.g 10,20 so here 10 
+# is start value and 20 is end value.
+#step:-it will decide by how many number we want to increment 
+#values by default it is always 1.
+x=range(5,20,2)
+print(x[2])
+
+
+#Tuple:-Same as list but it is immutable.It is represented as ()
+t=('Pune','Mumbai',10)
+
+#set:-It can not maintain insertion oreder.
+# It can not accept duplicate values.
+#{} is used for set
+
+s={'Pune','Mumbai',10}
+s.add(20)
+print(s)
+print(type(s))
+
+
+#frozenset:-It immutable set.
+s1=frozenset(s)
+print(s1)
+
+
+#dict(dictionary)
+#It store values in the form of key and value pair
+#Values can be duplicate but keys are unique
+#It is mutable
+d={10:'Mugdha',20:'Prachi',30:'Mugdha'}
+print(d) 
+d[40]='Vini'
+print(type(d))
+print(d)
+print(d[20])
+
+20/10/2020
+
+print function:-It is used to print output on the screen.
+default separator of function is space if we want to change saperator then use 'sep' opetion in print.
+To print values of variable in between then use either format specifier or format function.
+
+a=20
+b=30
+s="Welcome"
+print("Values of a and b are",a,b,sep='-')
+
+print("Value of a=%d and b=%d"%(a,b))
+
+print("Value of a={0} and msg={1}".format(a,b))
+
+print("Good",end=' ')
+print("Morning",end=' ')
+print("All")
+
+
+a=40
+b=29
+c=78
+if(a>b):
+    if(a>c):
+        print("a=%d is graeter",a)
+    else:    
+        print("c=%d is graeter",c)
+elif(b>c):
+    print("b=%d is graeter",b)
+else:
+    print("c=%d is graeter",c)
+
+1) Write a program to find largest and smallest number form list.
+z=lis[0]
+w=lis[0]
+for i in lis:
+    if i>z :
+        z=i
+    if i<w:
+        w=i
+print("largest number",z)
+print("smallest number",w)
+
+2) Write a program which accept a range of 10 numbers, Iterate from start number to the end number and print the sum of the current number and previous number
+e.g  current +prev=new numbe
+0+0=0
+ 0+1=1
+ 1+2=3
+ 2+3=5-----
+cvalue=0
+pvalue=0
+for i in range(10):
+    pvalue=cvalue
+    cvalue=i
+    print(pvalue,"+",cvalue,"=",pvalue+cvalue)
+
+
+
+3) Write a program to accept a string and create substring from even position.
+e.g  Wel-come =Wlcm
+string='Wel-come'
+string[::2]
+
+4) Create a list of 10 numbers. Create another list which have numbers only divisible by 5.
+[i for i in l if i%5==0]
+
+5) Write a program to store 10 numbers. Duplicate numbers not allowed. Create a list of only palindrome numbers.
+num=int(input("Enter a number:"))
+temp=num
+rev=0
+while(num>0):
+    dig=num%10
+    rev=rev*10+dig
+    num=num//10
+if(temp==rev):
+    print("The number is palindrome!")
+else:
+    print("Not a palindrome!")
+
+6) Write a program which store name and phone number of a person. Accept name and display its phone number.
+abc={"abhi":9699,"Abhilash":88745}
+def SearchNumber(l):
+    search=abc[l]
+    print(search)
+    
+SearchNumber("abhi")
+
+without function
+abc={"abhi":9699,"Abhilash":88745}
+i=input("Enter Search name to find number")
+search=abc[i]
+print(search)
+
+
+7) Write a program to store 10 values (duplicates are not allowed) and search a number in given values.
+
+8) Find the sum of the series 2 +22 + 222 + 2222 + .. n 
+
+
+21/10/2020
+
+st="Python is very easy language and very easy to learn"
+#find():-It is used to find given substring or char 
+
+# is present in the string or not and returns its index.
+print(st.find('easy'))
+print(st.find('easy',20,30))
+
+#rfind():-This function find substring from right side
+print(st.rfind('easy'))
+
+#index:- it will find index of given char
+print(st.index('very'))
+
+#rindex:- it will find index of given char from right side
+print(st.rindex('very'))
+
+#count:-This function find occurance of given substring in string
+print(st.count('easy'))
+
+#replace:-This function replace old string with new string
+print(st.replace('language',','))
+s="Pune,Mumbai,Nashik,Satara"
+
+#split:-This function split whole string using some saperator. 
+
+# Default saperature is space
+s1=s.rsplit(',',2)
+print(s1)
+
+#join:-It is used to combine list or touple in a string
+l=['Python','C','C++','java']
+s2=','.join(l)
+print(s2)
+
+#upper():-It will convert string in upper case
+print(s2.upper())
+
+#lower():-It will convert string in lower case
+print(s2.lower())
+
+1) Write a program to accept email and password from user and check both are valid or not
+Password must be combination of special char(#,_,$)uppercase chars ,lower case chars and number
+If email and password is valid then display any message
+
+
+
+2) Write a program which have values like ‘Name city phoneno’
+Store info about 3 people and find a person in list and display its information.
+e.g
+info=[[‘Mugdha’,’Pune’,’982334534’],[‘Prachi’,’Pune’,’1273217’]]
+now if I search for Prachi and it present in list then display info
+def mySearch(a,search):
+    for i in a:
+        if search==i[0]:
+            print(i)
+
+mySearch(info,'Prachi')
+
+22/10/2020
+
+#List function
+#len():-It will return length of list.
+l=[10,20,30,10,'a','b','c']
+l1=['x','g','d',7,8,9]
+print(len(l))
+#count():=It returns occourance of given element in the list
+print(l.count(10))
+#append():-It is used to add element in the list at end
+l.append('a')
+#insert:-It will use to add element at specified position or index
+l.insert(2,'e')
+print(l)
+#index():-It will return index of given element
+print(l.index('b'))
+#extend():-It will add elements from 1 list to another list
+l.extend(l1)
+print(l)
+#reverse():-It will reverse the list
+l.reverse()
+print(l)
+#copy():-It is use to copy contents of 1 list into another list
+l1=l.copy()
+
+
+a=10
+b=30
+c=50
+#packing
+t=a,b,c
+print(t)
+#unpacking
+a,b,c=t
+print("x=%d y=%d z=%d"%(a,b,c))
+
+
+#set function
+s=set()
+s1={'Pune','Mumbai'}
+print(type(s))
+#add():-It is used to add element in set
+s.add('Nashik')
+#update():-This function add elements from one squence into set.
+s.update(s1)
+print(s)
+#remove():-It removes perticular element from set
+s.remove('Mumbai')
+print(s)
+#pop():-This function remove random element
+s.pop()
+print(s)
+#clear():-This function removes all elements from set
+s.clear()
+print(s)
+s_1={'a','b','c','d'}
+s_2={'a','b','e','f','g'}
+#union() or '|' It perform union opertion on two sets
+#s_1=s_1.union(s_2)
+#print(s_1)
+#intersection or '&' it find intersection of two set
+s_3=s_1.intersection(s_2)
+s_3=s_1&(s_2)
+s_3.add('x')
+print(s_3)
+#'-' It will returns elements which is present in 1st set but
+#not present in 2nd set
+print(s_3-s_1)
+#'^' or symmetric_difference() :- It will returns uncommon element from both sets
+print(s_3^s_2)
+s_3.symmetric_difference_update(s_2)
+print(s_3)
+#insertion_update()
+#difference_update()
+
+
+
+1)Write a program that accepts a sentence and calculate the number of letters and digits
+let=0
+dig=0
+for i in sentance:
+    if i.isalpha():
+        let+=1
+    if i.isdigit():
+        dig+=1
+print(let)
+print(dig)
+
+
+
+2)Write a Python program to remove duplicates from a list.
+lis=[1,2,3,1,1,1,1]
+lis=list(set(lis))
+
+#3) Write a Python program to find the 3rd smallest and largest number in a list.
+
+result=[10,20,1,2,3,4,5]
+result.sort(reverse=False)
+ThirdSmall=result[3]
+ThirdLargest=result[len(result)-3]
+print(result)
+print(Small)
+print(ThirdLargest)
+
+4)Write a program to find uncommon elements from 2 lists
+l=[1,2,3,4,5]
+q=[1,2,3,4,6,7,8]
+l1=set(l)
+l2=set(q)
+s_1=l1.symmetric_difference(l2)
+list(s_1)
+
+
+
+5)Write a program that returns a list that contains only the elements that are common between the lists (without duplicates). Both list are of different sizes
+l=[1,2,3,4,5]
+q=[1,2,3,4,6,7,8]
+l1=set(l)
+l2=set(q)
+s_1=l1.intersection(l2)
+list(s_1)
+
+23/10/2020
+d={100:'Mugdha',200:'Prachi',300:'Shital',400:'Anu'}
+get():-It is used to get value from key.If key is not 
+present it will give returns value specified in get function
+n=int(input("Enter roll number"))
+print(d.get(n,'Not found'))
+
+#pop:-It removes the specified key and returns value
+print(d.pop(400))
+print(d)
+#popitem():-It will delete random key values
+d.popitem()
+print(d)
+#keys():-It will returns all keys from dictionary.
+for x in d.keys():
+    print(x)
+#values():-it will retuens all values from diectionary
+for x in d.values():
+    print(x)
+#items():-It is used to get all elements from diectionary(keys and values)
+for x,y in d.items():
+    print("Keys=%d values=%s"%(x,y))
+#setdefault():-If key is present then it will display that 
+value and if key is not present then it will add default value
+in the dictionary
+n=int(input("Enter roll number"))
+d.setdefault(n,'Vinaya')
+print(d[n])
+print(d)
+d1={500:'Tejas',700:'Sagar',800:'Rohit'}
+#update():-Using this function we can merge two dictionary.
+d.update(d1)
+print
+
+d2={}
+l=[1,2,3,4,5]
+#fromkeys:-it forms the keys from given sequence
+for i in d2.fromkeys(l):
+    d2[i]=input("insert values")
+print(d2)
+
+1) Find the occurrence of each letter in the word. 
+2) Create a dictionary of book category name and price. Accept book name and display its price
+3) Create a dictionary of student class which stores information of students like name, rollno, and marks for 3 subject. Accept class and rollno and display student details along with percentage
+
+26/10/2020
+Function:To declare a function 'def' keyword is used. 
+def function_name(arguments):
+ statements
+
+Types of parameters 
+1) Positional
+2) Keywords
+3) Default
+4) Var-> Variable length (*)
+
+#positional parameters:- values are copied according to sequence.
+def add(a,b): 
+    print(a+b)
+add(67,78)
+
+#keyword parameters:- When we call function that time we provide value
+#by variable name
+
+def multi(a,b,c):
+    print(a*b*c)
+multi(a=7,b=8,c=6)
+
+#default parameters:-If we does not pass value for that variable 
+# then it will take default value in calculation.
+def add_val(a,b=78,c=50):
+    print(a+b+c)
+add_val(10,c=10)
+
+#variable length parameter:-it is denoted by *<variable name>
+#we can pass any number of values for single function
+def display(*n):
+    for x in n:
+        print(x)
+
+display('A','B','C')
+display(19,30,56,67)
+
+#To accept keyword and argument values as a parameter or argument
+#then we us **. single * specifies value and double * specifies 
+#keyword and values.
+
+def printData(**n):
+    print(n)
+    for x,y in n.items():
+        print(x,y)
+printData(a=45,nm='MJ',b=40,n1='PJ')
+
+#1) Write a function to check entered number is prime or not
+def checkprime(num):
+    count=0
+    if num>1:
+        for i in range(2,num):
+            if num%i==0:
+                count+=1
+    if count>0:
+        print('number is not prime number',num)
+    else:
+        print('number is prime number',num)
+        
+         
+checkprime(9)
+
+#2) Write a function to find sum of all elements
+
+def add_value(*n):
+    temp=0
+    for i in n:
+        temp=temp+i
+    print(temp)
+
+
+#5) Write a function which will search person in given dict. If find display its info outside the function
+
+d={'person1':{'Name':'Abhi','class':'first','rollNo':100},'person2':{'Name':'abhilash','class':'second','rollNo':200}}
+def searchName(snm):
+    valid=False
+    for i in d.values():
+        if i['Name']==snm:
+            valid=True
+        if valid==True:
+            print(i)
+searchName('abhilash')
+
+#6) Write a function to find total number of even and odd numbers from set
+num={1,2,3,4,5,6,7,8,9,10,11}
+
+def checkNumber(num):
+    cEven=0
+    cOdd=0
+    for i in num:
+        if i%2==0:
+            cEven+=1
+        else:
+            cOdd+=1
+    print("even number count is",cEven)
+    print("odd number count is",cOdd)
+
+checkNumber(num)
+
+
+
+filter():-It is used to filter the result of function. If function return true then only is consider that value 
+syntax
+filter(function_name,sequence)
+
+def isEven(x):
+    if(x%2==0):
+        return True
+    else:
+        return False
+l1=[10,20,11,45,44,88,89]
+l2=list(filter(isEven,l1))
+print(l2)
+
+27/10/2020
+
+from functools import reduce
+def square(x):
+    return x*x
+def sum(a,b):
+    return a+b
+
+l=[2,5,63,8,9]
+
+# map():-It applies given function to all of the elements from sequence and return new list. It applies some function on elements 
+# and return new list.
+# syntax:
+# map(function_name,sequence) 
+
+l2=list(map(square,l))
+print(l2)
+
+# Reduce:-It apllies some function to list of elements and return single value.This function is available in functools module.
+# syntax
+# reduce(function_name,sequence)
+s=reduce(sum,l)
+print(s)
+
+Recursive Function:- Function give call itself is called recursive function
+Adv:-
+1)It reduce the length of prog. and increase readability
+2)Using this func. very complex prob. we can solve easily.
+
+Disadv:
+It required more stack mem.
+
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+
+Lambda Function or Anonymous Function:- This function do not have name i.e they unnamed functions. Only one time use.
+syntax
+lambda argument:expression
+
+from functools import reduce
+
+s=lambda x: x*x
+print(s(6))
+
+l=[2,3,4,5,7]
+l2=reduce(lambda x,y: x+y,l)
+print(l2)
+
+
+
+
+#1) Write a program which create new list of even numbers and odd number
+l=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,45]
+even=list(filter(lambda x: x%2==0,l))
+odd=list(filter(lambda x: x%2!=0,l))
+
+#2) Write a program to find product of all elements
+product=reduce(lambda x,y:x+y,l)
+product
+
+#3) Write a prog. To create new list of numbers from given list that nos are divisible by 3 and 5
+lis=list(filter(lambda x:x%3==0 and x%5==0,l))
+lis
+
+
+#4) Write a prog. to create new string of only vowels from string
+string=input("Enter the string")
+l=['A','a','E','e','I','i','O','o','U','u']
+lis=list(filter(lambda x:x in l ,string))
+lis
+
+5) Write a prog to to remove stop words from string and create new string
+e.g. s=I am Mugdha Joshi and I am computer trainer of programming language and I work in CRB
+So remove ‘and’,’ in’ ,’of’ from string and generate new string
+
+
+#6) Write a prog. which create new list of books which present in both list
+a=['hindi','marathi','english']
+b=['hindi','cpp','java','english']
+both=list(filter(lambda x:x in b,a))
+both
+
+#7) Write a lambda function to create new list of only palindrome strings from given list
+e.g List1=[‘nayan’,’madam’,’Mumbai’,’Pune’]
+then list2=[‘nayan’,’madam’
+List1=['nayan','madam','Mumbai','Pune']
+List2=list(map(lambda x:x[::-1],List1))
+List3=list(filter(lambda x:x in List2,List1))
+List3
+
+#8) Write a prog. to create new list with name of exact 3 character name.
+list1=['abc','abcd','abcds','xyz']
+list2=list(filter(lambda x:len(x)==3,list1))
+list2
+
+#9) Write a prog. to find are of circle of radius between 2 to 8
+list1=list(map(lambda x:x*x*3.14,range(2,9)))
+list1
+
+#10) Write a prog. which separate alphabets and number from string and create 2 different list
+string = input("Enter string")
+list1=list(filter(lambda x:x in ('1','2','3','4','5','6','7','8','9','0'),string))
+list2=list(filter(lambda x:x not in ('1','2','3','4','5','6','7','8','9','0'),string))
+print(list1)
+print(list2)
+
+28/10/2020
+
+module: In module different classes, functions, constants are available. We can import perticular module and use all available functions in our program.
+1) math module:- all mathmatical functions are available in math module.
+to import module we can use different statement
+1) import math 
+to create allies
+import math as m :- After creating allies we have to use 'm' instead of math
+
+2)To import particular function we have to write
+from math import sqrt 
+
+import math as m
+#sqrt():-It is use to find sruare root of a number
+print(m.sqrt(16))
+#ceil():-It accept decimal values and return nearest high integer value
+print(m.ceil(10.23))
+#floor:-It accept decimal values and return nearest low integer value
+print(m.floor(23.52))
+#pow():-It will return power of a number
+print(m.pow(2,3))
+#gcd():-It will return gcd(greatest common diviser) from two numbers
+print(m.gcd(20,40))
+#prod():-It will return product of given sequence
+l=[2,3,4,5]
+print(m.prod(l))
+
+import datetime as d
+dt=d.datetime.now()
+print(dt)
+print("Year is",dt.year)
+print("Month is",dt.month)
+print("Date is",dt.day)
+print("Hour is",dt.hour)
+print("Minute is",dt.minute)
+print("Seconds are",dt.second)
+print("Microseconds are",dt.microsecond)
+
+Date formats
+%a:-Display weekday in short
+%A:-Display weekday in full
+%w:-Display weekday as number
+%d:-Display day of month
+%b:-Display month name in short
+%B:-Display month name in full
+%m:-Display month in number
+%y:-Display year in short
+%Y:-Display full year
+
+Time Format
+%H=It displays hours in 0-23
+%I=It displays hours in 0-11
+%p=It displays PM/AM
+%M=It displays minute in 0-59
+%S=It displays seconds in 0-59
+%f=It displays microseconds
+
+%j=It displays day number of year
+%U=It displays week number of year
+
+from datetime import timedelta,datetime
+
+t=datetime(year=2020,month=10,day=1,hour=10,minute=30,second=20)
+t1=datetime(year=2021,month=10,day=1,hour=11,minute=30,second=20)
+print(type(t))
+t2=t1-t
+print(t2)
+
+t2=timedelta(hours=10)
+t3=timedelta(minutes=68)
+t4=t2-t3
+print(type(t2))
+print("Difference is=",t4)
+
+
+1) Accept date and write a function to find year is leap year or not
+2) Accept birth date and check person is eligible for voting or not
+3) Write a program to print yesterday, today, tomorrow.
+4) Write a program to convert Year/Month/Day to Day of Year
+5) Find the weekday of your birthdate.
+
+6) Write a program to check entered number is perfect square number or not
+7) Write a program to find roots of quadratic equation
+8) Write a program to calculate Standard Deviation
+9) Write a function to find type of triangle
+10) Write a program to solve (a+b)2
+
+29/10/2020
+regular Expression
+import re
+
+#using [] and - we can define range of characters or numbers.
+pattern='[a-z A-Z]'
+#now it will search string contains chars between a to z 
+# and A Z if we spacify [^a-b] it will find other charecter 
+# than a-z
+st="This Example"
+s=re.findall(pattern,st)
+print(s)
+if s:
+print("Find")
+else:
+print("Not Find")
+
+import re
+#.(dot) it is match with single character when we want 
+# to search words with exact length and start with some 
+# char then use this pattern
+pattern='T..s'
+#here it will search words start with T and end with s 
+st="This is The Example Tie"
+s=re.findall(pattern,st)
+print(s)
+if s:
+    print("Find")
+else:
+    print("Not Find")
+
+import re
+#*(star):It matche 0 or more occurance of the pattern in 
+# the given string
+pattern='T*'
+#here it will search words start with T and end with s 
+st="This is The Example Tie"
+s=re.findall(pattern,st)
+print(s)
+if s:
+    print("Find")
+else:
+    print("Not Find")
+
+
+#+(plus):It matche 1 or more occurance of the pattern in 
+# the given string
+pattern='T+'
+#here it will search words start with T and end with s 
+st="This is The Example Tie"
+s=re.findall(pattern,st)
+print(s)
+if s:
+    print("Find")
+else:
+    print("Not Find")
+
+
+import re
+#{n,m}:At least n times occurance i.e it will find 
+# minimum 'n' occurance and atmost 'm' occurance in the string
+pattern='a{2,3}m'
+#here it will atleast 2 a and at the most 3 a bteween a to m 
+st="This is The Exaamplea Tie"
+s=re.findall(pattern,st)
+print(s)
+if s:
+    print("Find")
+else:
+    print("Not Find")
+
+#():This '()' is used to group different patterns
+pattern='^T([a-m])'
+#here it will atleast 2 a and at the most 3 a bteween a to m 
+st="This is The Examplea Tie"
+s=re.findall(pattern,st)
+print(s)
+if s:
+    print("Find")
+else:
+    print("Not Find")
+
+#'\':- This '\' is used to specify escape characters. 
+#\A:-It is used to check string is started with 
+# perticular char. or word
+st="This is example of Regular Expression"
+s=re.findall('\AThis',st)
+print(s)
+
+#'\':- This '\' is used to specify escape characters. 
+#\D:- It gives only alphabets
+#\d:-It gives digits
+st="This is example of Regular 12 Expression 67"
+s=re.findall('\\D',st)
+print(s)
+s=re.findall('\\d',st)
+print(s)
+
+30/10/2020
+
+1) Write a program to Count Uppercase, Lowercase, special character and numeric values using Regular expression
+2) Write a program to find maximum numeric value from given string
+3) Write a program to check string is starts and ends with the same character or not.
+1) Write a program to find sequence of one uppercase letter followed by lowercase letters
+2) Write a program to remove characters other than alphabets and number 
+3) Write a program to check string is start with vowel
+
+
+02/11/2020
+random():-It geneate random floating values between 0.0 to 1
+randint(a,b):-It will generate random integer value from given range.
+randrange(a,b,step):-Returns random integer between given range.
+getrandbits(k):-It returns an integer in the specified size in the bits format
+uniform(a,b):-It generates random floating value between given range. 
+triangular(low,high,mode):-It  returns a random floating number between given range but using mode we can also specify mode which is the midpoint between the bounds and give symmetric distribution.
+seed(k):-Generators are work by performing some operation on a value. Generally this value is the previous value. However the first time we use the generator there is no previous value that time generator use systime value but if we seeding no to generator it is its previous value for 1st value using this value it will generate random values.
+
+
+import random as r
+#random():-It geneate random floating values between 0.0 to 1
+r.seed(4)
+print(r.random())
+#randint(a,b):-It will generate random integer value from given range.
+print(r.randint(20,50))
+#randrange(a,b,step):-Returns random integer between given range.
+ for i in range(0,5):
+     print(r.randrange(20,50,3))
+#getrandbits(k):-It returns an integer in the specified size in the bits format
+ for i in range(0,5):
+     print(r.getrandbits(64))
+#triangular(low,high,mode):-It  returns a random floating
+# number between given range but using mode we can also 
+# specify mode which is the midpoint between the bounds and give symmetric distribution.
+ for i in range(0,10):
+     print(r.triangular(0,1000,500))
+
+choice(seq):-Returns random element from sequence
+shuffle(seq):-Shuffle the given sequence
+sample(seq,k)Returns a list with a random selection of specified number of items from list
+
+
+#choice(seq):-Returns random element from sequence
+l=[12,34,56,67,78,90,111,3333,23.56,6.78]
+print(r.choice(l))
+#shuffle(seq):-Shuffle the given sequence
+r.shuffle(l)
+print(l)
+#sample(seq,k)Returns a list with a random selection 
+#of specified number of items from list
+print(r.sample(l,3))
+
+betavariate(a,b):-It will return a random floating values
+with beta distribution. The return value is in between 0 to 1 
+
+expovariate(a):-It is used to return a random floating number with 
+exponential distribution
+
+gammavariate(a,b):-It will return a random floating values
+with gamma distribution.
+
+gauss(mu,sigma):-It generates pseudo random numbers. It returns a random floating number with gussian distribution
+mu=Mean value
+sigma=Standard Deviation
+
+lognormvariate(mu,sigma):It will return a random floating values
+with log normal distribution.
+mu=Mean value
+sigma=Standard Deviation
+
+normalvariate(mu,sigma):It will return a random floating values
+with normal distribution.
+mu=Mean value
+sigma=Standard Deviation
+
+vonmisesvariate(mu,kappa):-It returns random floating point values with von Mises distribution or circular normal distribution
+mu:-mean angle, expressed in radians between 0 to 2*pi
+kappa:-Concentration parameter greater than or equal to 0
+
+import random as r
+#find 5 even numbers between 20 to 100
+l=[]
+for x in range(20,100):
+    if x%2==0:
+        l.append(x)
+print(r.choice(l))        
+#or
+for i in range(1,5):
+    print(r.choice([i for i in range(20,100) if i%2==0]))
+
+
+#1) Generate 3 random integers between 100 and 999 which is divisible by 5
+l=[]
+for x in range(0,3):
+    print(r.choice([i for i in range(100,999) if i%5==0]))
+#2) Write a program to generate 100 random lottery tickets and pick two lucky tickets from it as a winner.
+for x in range(0,2):
+    print(r.choice([i for i in range(0,100)]))
+#3) Write a program to generate 6 digit random secure OTP
+import random as r
+import math
+
+digits = [i for i in range(0, 10)]
+random_str = ""
+for i in range(6):
+    index = math.floor(r.random() * 10)
+    random_str += str(digits[index])
+
+print(random_str)
+
+#4) Write a program to calculate multiplication of two random float numbers
+l=[]
+temp=1
+for i in range(0,2):
+    x=r.triangular(0,1000)
+    print(x)
+    temp=temp*x
+print(temp)
+
+#5) Write a program to roll dice in such a way that every time you get the same number
+import random as r
+r.seed(8)
+print(r.randint(1,6))
+
+#6) Write a program to create list of numbers which is divisible by 5 and 7, between 10 and 150.
+
+[i for i in range(10,151) if i%5==0 and i%7==0]
+
+
+import string 
+import random 
+
+N = 5
+
+my_pwd = ''.join(random.choices(string.ascii_uppercase + string.digits, k = N)) 
+print("The generated random password : " + str(my_pwd)) 
+
+
+3/11/2020 Exception
+Exception:-It is an event which occurs during execution of program that distrubs the normal flow of program execution. 
+Types of exceptions
+1)inbuilt
+2)user define
+
+These exception are handled by using
+try
+except(catch) and finally
+
+Example 1
+try:
+    a=int(input("Enter number"))
+    b=int(input("Enter number"))
+    print(a/b)
+except ValueError:
+    print("Some value is wrong")
+except:
+    print("Something went wrong")
+print("Example of exception")
+
+Example 2
+try:
+    a=int(input("Enter number"))
+    b=int(input("Enter number"))
+    if(a<0):
+        raise ValueError  #on some condition 
+                          #we can explitly reaise inbuilt exception
+    else:
+        print(a/b)
+except ValueError:
+    print("Values are not correct")
+except ZeroDivisionError:
+    print("Divide by zero error")
+except:
+    print("Something went wrong")
+print("Example of exception")
+
+"""
+Example of user define exception 
+"""
+class negativeValueerror(Exception):pass
+try:
+    a=int(input("Enter Number"))
+    b=int(input("Enter Number"))
+    if(a<0 or b<0 ):
+        raise negativeValueerror("-ve Values are not allowed")
+    else:
+        print(a+b)
+except negativeValueerror as err:
+    print(err)
+
+
+Mugdha Joshi
+
+Some Common exceptionFloatingPointError
+IndexError
+NameError
+ValueError
+ZeroDivisionError
+FileNotFoundError
+
+
+1) Write a program to perform all mathematical operation. Handle all possible errors
+2) Write a program to accept a number if number is more than 8 digits then raise the error toobignumber and if number is less than 3 digits raise error toosmallnumber
+3) Write a program to create store item and price. Search a item in list and if item not found then raise error otherwise print its price
+
+
+04/11/2020
+OOPs in Python
+class <classname>:
+ stamts
+def __init__(self):constructor in python. self is a default parameter for every method.self represent to current object. In constructor self is used to create new instance variables. And in other methods self is used to distinguish between local variable and instance variable
+
+in python '__' is used to specify private access.
+
+
+class Test:
+    def __init__(self): #constructor
+        self.__a=10 #private variable
+        self.__b=20 #private variable
+    def add(self):
+        self.c=0
+        self.c=self.__a+self.__b
+        print(self.c)
+    
+obj=Test()
+obj.add()
+
+
+Python does not support function overloading. Python support operator overloading.
+some functions to overload different operator
++  __add__(self,otherobject)
+-  __sub__(self,otherobject)
+*  __mul__(self,otherobject)
+/  __truediv__(self,otherobject)   
+%  __mod__(self,otherobject)      
+// __floordiv__(self,otherobject)   
+** __pow__(self,otherobject)   
+
+for relational operators
+> __gt__(self,otherobject)   
+>=__ge__(self,otherobject)   
+< __lt__(self,otherobject)   
+<=__le__(self,otherobject)   
+== __eq__(self,otherobject)   
+!=__ne__(self,otherobject) 
+
+
+
+Single Inheritance:-Only one base class and one derived class.
+
+
+class A:
+    def __init__(self):
+        self.a=100
+    def display(self):
+        print("In class A")
+class B(A):
+    def __init__(self):
+        A.__init__(self)
+        self.b=200
+    def display_B(self):
+        print("In class B",self.a)
+        print(self.a+self.b)
+obj=B()
+obj.display()
+obj.display_B()
+
+
+
+
+
+
+class A:
+    def __init__(self):
+        self.a=100
+    def display(self):
+        print("In class A")
+class B(A):
+    def __init__(self):
+        #by using super keyword 
+        super().__init__()
+        self.b=200
+    def display_B(self):
+        print("In class B",self.a)
+        print(self.a+self.b)
+obj=B()
+obj.display()
+obj.display_B()
+
+
+Hierarchical inheritance: one base class and multiple derived classes
+
+class A:
+    def __init__(self):
+        self.a=100
+    def display(self):
+        print("In class A")
+class B(A):
+    def __init__(self):
+        #by using super keyword 
+        super().__init__()
+        self.b=200
+    def display_B(self):
+        print("In class B",self.a)
+        print(self.a+self.b)
+class C(A):
+    def __init__(self):
+        super().__init__()
+        self.c=400
+    def display_C(self):
+        print("In class C",self.a)
+        print(self.a+self.c)
+
+obj=B()
+obj.display()
+obj.display_B()
+
+c_obj=C()
+c_obj.display()
+c_obj.display_C()
+
+
+
+
+
+
+
+
+class A:
+    def __init__(self,a):
+        self.a=a
+    def display(self):
+        print("In class A")
+class B(A):
+    def __init__(self,a):
+        #by using super keyword 
+        super().__init__(a)
+        self.b=200
+    def display_B(self):
+        print("In class B",self.a)
+        print(self.a+self.b)
+class C(A):
+    def __init__(self,a):
+        super().__init__(a)
+        self.c=400
+    def display_C(self):
+        print("In class C",self.a)
+        print(self.a+self.c)
+
+obj=B(150)
+obj.display()
+obj.display_B()
+
+c_obj=C(250)
+c_obj.display()
+c_obj.display_C()
+
+
+Multiple Inheritance:-One derived class is derived from more than one base classes.
+class A:
+    def __init__(self,a):
+        self.a=a
+        print("In A")
+class B:
+    def __init__(self,b):
+        self.b=b
+        print("In B")
+class C(A,B):
+    def __init__(self,c,b,a):
+        self.c=c
+        B.__init__(self,b)
+        A.__init__(self,a)        
+        print("In C")
+on=C(10,20,30)
+
+Multilevel Inheritance:-from derived class we can derived new class i.e derived class can also be a base class for another class
+class A:
+    def __init__(self,a):
+        self.a=a
+        print("In A")
+class B(A):
+    def __init__(self,b):
+        self.b=b
+        print("In B")
+    def add(self):
+        print(self.a+self.b)
+class C(B):
+    def __init__(self,c,b,a):
+        self.c=c
+        super().__init__(b)
+        super(B,self).__init__(a)
+        print("In C")
+    def addition(self):
+        print(self.a+self.b+self.c)
+        
+
+ob=C(10,20,30)
+ob.add()
+ob.addition()
+
+1) Write a class Employee derived two classes from employee class and accept employee number and display salary slip for that employee. 
+1) Contract    2)CompanyEmployee
+2) Create class customer and Item and order class  and display invoice of customer for item
+3) Write a class Book, StudyBook and NonStudyBook. Enter some book data. Accept book name and check if that book is available or not. If available then issue that book. Otherwise display appropriate msg. [Hint:-Use exception handling]
+
+#(9 Nov 2020) TYPES OF VARIABLE:-
+Types of variable in classes
+1)Instance Variable:-Separate copy is created for every object
+2)Static variable/class Variable:-Only one copy is available and it is share by all objects.It is declare in the class but outside all methods or inside any method by using class name or inside class method by using cls(Is is used to access current class data).
+3)Local variable:-It is declare and use inside method only.
+
+
+Typrs of methods
+1)Instance method:-default argument for this method is always self. It is called by using object of a class.
+2)class method: It is similar to static method.it is declare using decorator @classmethod. if we are not use this decorator then this method is considered as instance or static.
+3)static method:-It is called using class name or using object. no default argument. It can access only static variable.
+
+#example of static variable:
+class Test:
+    company_name="Crb tech solutions"
+    pin=411001
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+        Test.city="Pune"   
+    def display(self):
+        print(self.a)
+        print(self.b)
+        print(Test.city)
+        print(Test.company_name)
+        print(Test.pin)
+
+    @staticmethod
+    def Info():
+        print("Company name=",Test.company_name)
+        print("Pincode=",Test.pin)  
+
+Test.Info()
+t=Test(10,20)
+t1=Test(67,56)
+t.display()
+t1.display()
+t.Info()
+
+#example of class method:
+class Example:
+    def __init__(self,nm,ph):
+        self.nm=nm
+        self.ph=ph
+    @classmethod
+    def Info(cls,per):
+        cls.per=per
+    
+    def display(self):
+        print(self.ph)
+        print(self.nm)
+        print(Example.per)
+
+
+e=Example("prachi",9834567823)
+e2=Example("Mugdha",9876543423)
+Example.Info(80)
+e.display()
+e2.Info(90)
+e.display()
+
+
+
+
+
+Some imp points about these methods
+1) If inside a method we are using only static variable then it is recommended to declare this method as class method
+2)When we declare a class method then it is compulsary to use @classmethod decorator
+3)1st argument for class method is always cls which is a reference to current class object using this we can create or access static variables.
+4)Inside class method we can not access any instance variable. We can access only static variables.
+5)Whenever we required to write general utility then declare that method as static
+
+
+
+
+#(10 Nov 2020) NUMPY MODULE:
+import numpy as np
+
+l=[10,20,30,40,50]
+print(l)
+a=np.array(l) #array() is used to convert list into array
+print(a)
+print(type(l))
+print(type(a))
+print(a.dtype) #This property is used to check data type of array
+print(a.size) #This property returns size of array
+print(a.ndim) #This property returns dimension of array
+print(a.shape)#This property returns shape of array
+
+
+import numpy as np
+
+l=[[10,20],[30,40],[50,60]]
+print(l)
+a=np.array(l) #array() is used to convert list into array
+print(a)
+print(type(l))
+print(type(a))
+print(a.dtype) #This property is used to check data type of array
+print(a.size) #This property returns size of array
+print(a.ndim) #This property returns dimension of array
+print(a.shape)#This property returns shape of array
+for x in a:
+    for y in x:
+        print(y)
+#ndarray function use to create array we specify two 
+# parameters 1 is shape and another is datatype
+a=np.ndarray(shape=(3,3,2),dtype=int) 
+print(a)
+print(a.size)
+print(a.shape)
+print(a.ndim)
+for x in range(a.shape[0]): #shape is touple so we can access its value by index
+    for y in range(a.shape[1]):
+        for z in range(a.shape[2]):
+            a[x][y][z]=int(input("Enter value"))
+
+print(a)
+np.save("arrayExample",a) #using save we can save array in fine
+#using load function we can load save array
+l=np.load("arrayExample.npy")
+     
+a=np.ones((8,8,8)) #using ones function we can fill array with 1
+a=np.full((4,5),5) #using full function we can fill array with given value
+print(a)
+print(a.dtype)
+
+# TYPES OF VARAIBLES->
+1) Write a Python class to reverse a string word by word. 
+2)  Write a Python class to find validity of a string of parentheses, '(', ')', '{', '}', '[' and ']. These brackets must be close in the correct order, for example "()" and "()[]{}" are valid but "[)", "({[)]" and "{{{" are invalid.
+3) Write a class crypto which has two functions encrypt and decrypt. Use Caesar cipher algorithm to encrypt and decrypt data. Accept password min length is 8 char and maximum is 20 char 
+
+
+11/11/2020 
+#Identity Matrix
+#eye():is used to create identity matrix
+x=np.eye(5,5)
+print(x)
+#diag():-it is used ti create diagonal matrix
+x1=np.diag([10,20,30,40,50])
+print(x1)
+
+x=np.arange(10) #it will create array with values 0 to 9
+print(x)
+x1=np.arange(2,20) #it will create array with values 2 to 19
+print(x1)
+x2=np.arange(10,100,5) # 5 is the step value. Every value will increment by 5
+print(x2)
+print(x2.size)
+x3=np.reshape(x2,(6,3)) #It will reshape array in 2d
+print(x3)
+y=x3[1:5,0:2] #using this we can create sub-array 
+#array_name[start row:end row,start col:end col]
+print("New sub array is")
+print(y)
+
+
+x=np.random.randint(4,21,size=(4,5))
+print(x)
+
+x=np.delete(x,[0,3])
+print(x)
+print(x.size)
+x=np.append(x,[21,34,56])
+print(x)
+
+
+#maths operations 
+#add, subtract,multiply,divide
+x=np.arange(1,21)
+y=np.arange(1,40,2)
+print(x)
+print(y)
+print('-----------------------------------------------------------')
+print(np.subtract(x,y))
+print(np.sqrt(y))
+z=np.power(x,2)
+print(x)
+print(z)
+
+#to find sum of array elements
+print(np.sum(z))
+#to find mean of array 
+print(np.mean(x))
+print(x)
+print(y)
+#to find union
+print(np.union1d(x,y))
+#to find intersect
+print(np.intersect1d(x,y))
+#to find difference
+print(np.setdiff1d(x,y))
+
+#1) Write a NumPy program to generate five random numbers from the normal distribution.
+import numpy as np
+np.random.normal(10,100,5)
+
+#2) Write a NumPy program to generate six random integers between 10 and 30.
+np.random.randint(10,30,6)
+
+#3) Write a NumPy program to create a 3x3x3 array with random values.
+np.random.rand(3,3,3)
+
+#4) Write a NumPy program to create a 5x5 array with random values and find the minimum and maximum values.
+a=np.random.rand(3,3)
+np.min(a)
+
+#5) Write a NumPy program to create a random 10x4 array and extract the first five rows 
+#of the array and store them into a variable.
+a=np.random.rand(10,4)
+a[:5]
+
+
+#6) Write a NumPy program to shuffle numbers between 0 and 10 (inclusive).
+import random as r
+num=[1,2,3,4,5,6,7,8,9,10]
+
+r.shuffle(num)
+print(num)
+#7) Write a NumPy program to save a given array to a text file and load it.
+a=[1,2,3,4,5,6,7,8,9,10]
+np.save("arrayExample",a) #using save we can save array in fine
+#using load function we can load save array
+l=np.load("arrayExample.npy")
+
+
+8) Write a NumPy program to create a 3x3 identity matrix
+9) Write a NumPy program to reverse an array 
+10) Write a NumPy program to test whether each element of a 1-D array is also present in a second array. 
+
+#11) Write a NumPy program to find common values between two arrays.
+x=[10,20,30]
+y=[30,40,50]
+print(np.intersect1d(x,y))
+
+#12) Write a NumPy program to get the unique elements of an array. 
+x=[10,20,30,40,10,20,]
+print(np.unique(x))
+
+12/11/2020
+#File Handling
+fp=open("TestFile.txt","r")
+#read() function read file character by character
+#we can specify no. of characters to function
+print(fp.read())
+#readline() function read one fine from file
+data=fp.readline()
+print(data)
+#readlines() function read all lines from file
+print(fp.readlines())
+
+
+
+
+#to perform some operation on data in file we have to read file using lloop
+while(True):
+    line=fp.readline()
+    if not line:
+        break
+    print(line)
+
+
+#to write file write() is used
+#Open file into "w" mode i.e write mode. It write new file
+fp=open("one.txt","w")
+fp.write("This is 1st file written using Python code")
+fp.close()
+fp=open("one.txt","r")
+print(fp.readlines())
+fp.close()
+#if we open file in append mode then contents are added at the end of the 
+#existing file
+fp=open("one.txt","a")
+city=['Pune','Mumbai','Nashik']
+for x in city:
+    fp.write("\n"+x)
+fp.close()
+fp=open("one.txt","r")
+print(fp.read())
+
+
+import os
+#listdir:-used to show all directories from current path or specified pathj
+print(os.listdir(r'E:\TS_Files'))
+#mkdir is used to create directory on given path
+os.mkdir(r'E:\m')
+#rmdir is used to remove directory from given path
+os.rmdir(r'E:\m')
+#to check file already exists or not use os.path.exists()
+if( os.path.exists('one.txt')):
+    os.remove('one.txt')
+else:
+    print("File not found")
+#to get Current Working Directory use getcwd()
+print(os.getcwd())
+#to change working directory use chdir
+os.chdir(r'E:\m')
+a=open('one.txt','w')
+a.write("This is testing file")
+a.close()
+
+
+File Operation
+1) Display number of lines from file.
+2) Count occurrence of word in given file
+a. Eg The then find occurrence of The in file
+3) Accept data from user and store into file and then display that data.
+4) Store add list of student in existing file
+
+1) Show menu to user. Create new directory ‘FileOperations’  and store all files in that directory only 
+a. Create new file
+b. Add data in existing file
+c. Delete file
+Then accept file name from user check if file is exist or and then perform operation
+
+2) Read any file from another directory and make copy in ‘FileOperations’  directory
+
+18/11/2020
+
+1) Create 3 X3 matrix. Stored value in that matrix and return array of items in the third column from all rows
+
+2) Create 4X4 matrix and return array of odd rows and even columns
+
+3) From 2X2 2d array print max from axis 0 and min from axis 1
+
+4) Write a program to sort words from sentence in alphabetic order
+
+5) Retrieve all the words starting with ‘b’ or ‘B’ from the following text.
+text = """Betty bought a bit of butter, But the butter was so bitter, So she bought some better butter, To make the bitter butter better.""" 
+
+6) Clean up the following tweet so that it contains only the user’s message. That is, remove all URLs, hashtags, mentions, punctuations, RTs and CCs.
+tweet = '''Good advice! RT @TheNextWeb: What I would do differently if I was learning to code today <http://t.co/lbwej0pxOd> cc: @garybernhardt #rstats'''
+
+Required output = 'Good advice What I would do differently if I was learning to code today'
+
+1) Write a program to remove duplicate characters from string
+
+
+19/11/2020
+
+Pandas:- Pandas is an open source python library.It provides high performance data manipulation and analysis. It provides some data structur to perform this manipulation and analysis. Pandas stand for Pannel Data. It is top of the NumPy
+
+It provides two data structure
+1)Series
+2)Data Frame
+
+1)Series:- It is one dimensional labeled array and stores any type of data. The axis labels are refered to as index.
+
+2)Dataframe:- It is two dimensional labeled datastructure with columns of different type.
+
+import pandas as pd
+import numpy as np
+#s=pd.Series(data,[index]) series constructor to create series
+l=[10,20,30,56]
+s=pd.Series(l,index=['a','b','c','d'])
+print(s)
+l1=np.array([23,45,67,78,89])
+s1=pd.Series(l1)
+print(s1)
+
+
+#to read csv file read_csv() is used it stores file in dataframe
+df=pd.read_csv("Weather Data from 1901 to 2017.csv")
+#print(df)
+yr=df['YEAR'].tolist() #tolist() converts series into list
+data=df['JAN'].tolist() 
+s=pd.Series(data,index=yr)
+print(s)
+print(s.min())#min() is used to find minimum value from series
+print(s.max())#max() is used to find maximum value from series
+
+
+import pandas as pd
+df=pd.read_csv("Weather Data from 1901 to 2017.csv")
+#print(df)
+df.dropna(inplace=True)#is used to drop NaN rows from dataframe
+yr=df['YEAR'].tolist() #tolist() converts series into list
+data=df['JAN'].tolist() 
+s=pd.Series(data,index=yr)
+d=df['FEB'].tolist()
+s1=pd.Series(d,yr)
+print(s1)
+print("Subtraction of two series")
+print(s.sub(s1)) 
+
+
+import pandas as pd
+df=pd.read_csv("Weather Data from 1901 to 2017.csv")
+#print(df)
+#df.dropna(inplace=True)#is used to drop NaN rows from dataframe
+yr=df['YEAR'].tolist() #tolist() converts series into list
+data=df['JAN'].tolist() 
+s=pd.Series(data,index=yr)
+print("Values from series S")
+print(s)
+d=df['FEB'].tolist()
+s1=pd.Series(d,yr)
+print("Values from series S1")
+print(s1)
+print(s1.count()) #it counts rows which have values 
+                    #i.e does not count non NA or null values
+s1=s1.combine_first(s)#It combines values from one list to caller list. 
+                      #It combines only NaN Values of caller list
+print("After combine values from series S to S1")
+print(s1)
+print(s1[1916],s[1916])
+
+
+#(20 NOV 2020) DATAFRAME:-
+
+import pandas as pd
+#dataframe by using list
+l=[['M','20'],['P','19'],['S','14']]
+df=pd.DataFrame(l,columns=['Name','Bday'],index=['Jan','Dec','Jun'])
+print(df)
+pd.DataFrame
+#dataframe by using dict
+data={'Name':['M','P','S'],'Bday':[20,19,14]}
+d=pd.DataFrame(data,index=['Jan','Dec','Jun'])
+print(d)
+# dataframe by list of dict
+l=[{'a':1,'b':2,'c':3},{'a':11,'b':22,'c':33}]
+d1=pd.DataFrame(l)
+print(d1)
+#dataframe using zip function
+Name=['M','P','S']
+Bday=[20,19,14]
+data=list(zip(Name,Bday))
+print(data)
+d2=pd.DataFrame(data)
+print(d2)
+
+
+
+
+#Dataframe using different series
+s=pd.Series([10,20,30,40],index=['a','b','c','d'])
+s1=pd.Series([20,30,40,50])
+d={'One':s.values,'Two':s1.values}
+df=pd.DataFrame(d,index=s.index)
+print(df)
+
+
+import pandas as pd
+l=[[1000,100000],[1500,150000],[2200,90000],[2000,95000]]
+df=pd.DataFrame(l,columns=['Units','Price Per Unit'],index=[2014,2015,2016,2017])
+print(df)
+print("Minimum value form df")
+print(df['Price Per Unit'].min())
+print("Maximum value form df")
+print(df['Price Per Unit'].max())
+#to sord data according to any column values us sor_values
+df=df.sort_values(by='Price Per Unit', ascending=False)
+print(df)
+#to sort data by index use sort_index()
+df=df.sort_index()
+print(df)
+#To retrive some rows from top of the table use head()
+print(df.head(2))
+#To retrive some rows from end of the table use tail()
+print(df.tail(2))
+df['Total Amount']=df['Units']*df['Price Per Unit']
+print(df)
+#to delete a column from dataframe
+t=df.pop('Total Amount')
+print(t)
+print("After delete")
+print(df)
+
+
+
+
+
+
+1) Create series for march month and find the min temp and display year 
+2) Change index of dataframe as year and sort data according to min temp in dec
+3) Find mean temp from nov
+
+
+
+
+1) Create dataframe of car sales in last 10 years in every month. Find maximum sale car and the year.
+2) Display in which month min sale is done
+3) Find every years total sale
+4) Display 1st five highest sale cars 
+5) Display 2 cars who done minimum sale
+6) Find the average sale from every year
+
+
+
+1) Questions on Bank file
+#1) Display all customers whose age is greater than 40
+df[df['Customer_Age']>40]
+3) Display all customers whose age is greater than 30 and they are single
+4) Display all customer whose total revolving balance is NIL
+5) Display all customers whose total transaction amount is greater than 1500 and revolving balance is NIL
+6) Display All customers who have maximum revolving balance
+7) Display mean revolving balance of blue card
+8) Display Total transaction amount of every card
+9) Display all female customers
+10) Display all male customers who are graduate and unmarried 
+
+Food Details file
+1) Display all foods from Panjab state
+2) Remove null data from file
+3) Display Mahara. Food whose preparation time is greater than 20min
+4) Find mean preparation time of mahara food
+5) Display all desserts
+6) Find out maximum cooking time of spicy food from Panjab
+7) Find total number of dessert from Odisha
+
+
+1) Display all female students score highest in maths
+2) Display all student who score highest in reading from group B and C
+3) Display all students who completed test preparation course from their group
+4) Display all male students whose parents have master's degree
+5) Display highest score in maths in every group
+6) Display minimum writing score from every group
+7) Find mean of maths marks for every group
+8) Display all male student whose lunch type is free/reduced
+9) Calculate percentage of every student
+10) Display  student till 5th rank
+11) Display students whose parents have associate's degree and they belongs to C or D group
+
+
+
+
+#1) Create index as match Id
+df.set_index(['id'])
+#2) Display all matches From Mumbai
+df[df['city']=="Mumbai"]
+#3) List matches won by Chennai Super Kings in the year 2011
+df['date']=pd.to_datetime(df['date'])
+df[(df['date'].dt.year==2011) & (df['winner']=='Chennai Super Kings')]
+#4) Display total matches win by Delhi Daredevils from 2010
+df[(df['date'].dt.year>=2010) & (df['winner']=='Delhi Daredevils')].count()
+#5) Display all matches which is won by margin less than 5 runs
+df[df['result_margin']>=5]
+#6) Display last 10 year win count of every team
+a=df[(df['date'].dt.year>=2010)]
+b=a.groupby('winner').count()
+b['result']
+#7) Display all teams who won toss and also won match in the year between 2015 to 2
+df[(df['toss_winner']==df['winner']) & (df['date'].dt.year>=2015)]
+#8) Display all teams who bat first and lost match in 2019
+df[(df['toss_decision']=='bat') & (df['date'].dt.year==2019) & (df['toss_winner']!=df['winner'])]
+#9) Find highest result margin from may month in the year of 2008
+n=df[(df['date'].dt.year==2008) & (df['date'].dt.month==5)]
+n['result_margin'].max()
+#10) Display all matches from the year 2010 to 2015 in which 1st umpire is SJA Taufel
+df[(df['date'].dt.year>=2010) & (df['date'].dt.year<=2015)& (df['umpire1']=='SJA Taufel')]
+
+
+1) Display all maximum size apps 
+2) Display all shopping apps who got highest user rating
+3) Display all music apps whose sup_devices.num is greater than 35
+4) Display free apps from every types
+5) Display highest rating apps from every type which is free
+6) Display all apps which publish in more than 10 languages
+7) Display all apps which do not have url on ipadSc
+
+
+
+
+#1) Find all games whose score is less than 7
+df[df['score']<7]
+#2) Display genre wise highest score
+a=df.groupby('genre')
+a['score'].max()
+#3) Display year wise highest score games
+a=df.groupby('release_year')
+a['score'].max()
+#4) Display all games which release on dec 2010
+df[(df['release_year']==2010) & (df['release_month']==12)]
+#5) Display all action and adventure games
+df[(df['genre']=='Action, Adventure') | (df['genre']=='Action') | (df['genre']=='Adventure')]
+#6) Display all games which release on nov 2006 on PC platform
+df[(df['release_year']==2006)  & (df['release_month']==11 & (df['platform']=='PC'))]
+#7) Display minimum score for every score phrase.
+a=df.groupby('score_phrase')
+a['score'].min()
+#8) Display all games within 2012 to 2016 whose score in greater than mean score within that years
+a=df[(df['release_year']>=2012) & (df['release_year']<=2016)]
+b=a['score'].mean()
+a[a['score']>=b]
+#9) Display all Awful games which is release in 2012 to 2015
+df[(df['score_phrase']=='Awful') & ((df['release_year']>=2012) & (df['release_year']<=2015))]
+#10) Display all games whose platform is PlayStation3, PlayStation Vita , PlayStation and release in oct 2010 or oct 2009
+df[((df['platform']=='PlayStation 3') | (df['platform']=='PlayStation Vita') | (df['platform']=='PlayStation')) & (((df['release_year']==2008) | (df['release_year']==2009))&(df['release_month']==10))]
+
+#(26 Nov 2020):
+"""1) Display All records whose top article value is greater than 0
+2) Display total number of top articles of bbc_news
+3) Display who have maximum engagement_share_count.
+4) Display data according to source name 
+5) Display all articles of The New York Times
+6) Find al articles of abc-news
+7) Find out mean engagement_reaction_count of every source"""
+
+
+
+
+
+
+
+
+
+
+
